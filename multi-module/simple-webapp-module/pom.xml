@@ -4,17 +4,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.sonatype.mavenbook</groupId>
-        <artifactId>mvnex-examples</artifactId>
+        <groupId>org.sonatype.mavenbook.multi</groupId>
+        <artifactId>multi-module</artifactId>
         <version>1.0</version>
     </parent>
 
-    <groupId>org.sonatype.mavenbook.simpleweb</groupId>
-    <artifactId>simple-webapp</artifactId>
+    <artifactId>simple-webapp-module</artifactId>
     <packaging>war</packaging>
 
-    <name>Simple Web Application</name>
-    <url>https://books.sonatype.com/mvnex-book/reference/web.html</url>
+    <name>Simple Web Application Module</name>
+    <url>https://books.sonatype.com/mvnex-book/reference/multimodule-sect-simple-web.html</url>
 
     <dependencies>
         <dependency>
@@ -24,8 +23,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>org.sonatype.mavenbook.multi</groupId>
+            <artifactId>simple-weather-module</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

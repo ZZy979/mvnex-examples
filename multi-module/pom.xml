@@ -9,17 +9,17 @@
         <version>1.0</version>
     </parent>
 
-    <groupId>org.sonatype.mavenbook.simple</groupId>
-    <artifactId>simple</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>org.sonatype.mavenbook.multi</groupId>
+    <artifactId>multi-module</artifactId>
+    <packaging>pom</packaging>
 
-    <name>A Simple Maven Project</name>
-    <url>https://books.sonatype.com/mvnex-book/reference/simple-project.html</url>
+    <name>Multi-Module Project</name>
+    <url>https://books.sonatype.com/mvnex-book/reference/multimodule.html</url>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>11</maven.compiler.release>
-    </properties>
+    <modules>
+        <module>simple-weather-module</module>
+        <module>simple-webapp-module</module>
+    </modules>
 
     <dependencies>
         <dependency>

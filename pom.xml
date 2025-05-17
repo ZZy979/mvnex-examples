@@ -21,6 +21,7 @@
         <module>simple</module>
         <module>simple-weather</module>
         <module>simple-webapp</module>
+        <module>multi-module</module>
     </modules>
 
     <dependencyManagement>

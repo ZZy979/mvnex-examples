@@ -83,6 +83,37 @@ mvn package
 运行
 
 ```shell
-mvn jetty:run
-curl -s http://localhost:8080/simple
+$ mvn jetty:run
+$ curl -s http://localhost:8080/simple
+SimpleServlet Executed
+```
+
+## Multi-Module Project
+多模块项目，组合了simple-weather和simple-webapp两个示例。
+
+代码：[multi-module](multi-module)
+* [simple-weather模块](multi-module/simple-weather-module)
+* [simple-webapp模块](multi-module/simple-webapp-module)
+
+构建（在项目根目录下执行）
+
+```shell
+mvn install
+```
+
+运行
+
+```shell
+$ cd simple-webapp-module
+$ mvn jetty:run
+$ curl -s http://localhost:8080/weather?zip=10001
+*********************************
+ Current Weather Conditions for:
+  New York, NY, US
+
+ Temperature: 39
+   Condition: Fair
+    Humidity: 67
+  Wind Chill: 39
+*********************************
 ```
