@@ -67,3 +67,22 @@ $ java -jar target/simple-weather-1.0-jar-with-dependencies.jar 70112
   Wind Chill: 82
 *********************************
 ```
+
+## Simple Web Application
+简单Web应用。
+
+代码：[simple-webapp](simple-webapp)
+
+构建
+
+```shell
+cd simple-webapp
+mvn package
+```
+
+运行
+
+```shell
+mvn jetty:run
+curl -s http://localhost:8080/simple
+```
