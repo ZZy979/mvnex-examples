@@ -3,6 +3,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+velocity.log
+data/
+
 ### IntelliJ IDEA ###
 .idea/
 *.iws

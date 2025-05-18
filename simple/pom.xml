@@ -16,11 +16,6 @@
     <name>A Simple Maven Project</name>
     <url>https://books.sonatype.com/mvnex-book/reference/simple-project.html</url>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>11</maven.compiler.release>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>junit</groupId>

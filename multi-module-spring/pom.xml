@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.sonatype.mavenbook</groupId>
+        <artifactId>mvnex-examples</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <groupId>org.sonatype.mavenbook.multispring</groupId>
+    <artifactId>multi-module-spring</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Multi-Module Enterprise Project</name>
+    <url>https://books.sonatype.com/mvnex-book/reference/multimodule-web-spring.html</url>
+
+    <modules>
+        <module>simple-model-module</module>
+        <module>simple-persist-module</module>
+        <module>simple-weather-module-spring</module>
+        <module>simple-webapp-module-spring</module>
+        <module>simple-command-module-spring</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate</artifactId>
+                <version>3.2.5.ga</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.transaction</groupId>
+                        <artifactId>jta</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>javax.transaction</groupId>
+                <artifactId>jta</artifactId>
+                <version>1.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-annotations</artifactId>
+                <version>3.3.0.ga</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-commons-annotations</artifactId>
+                <version>3.3.0.ga</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring</artifactId>
+                <version>2.0.7</version>
+            </dependency>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>1.2.14</version>
+            </dependency>
+            <dependency>
+                <groupId>dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>1.6.1</version>
+            </dependency>
+            <dependency>
+                <groupId>jaxen</groupId>
+                <artifactId>jaxen</artifactId>
+                <version>1.1.4</version>
+            </dependency>
+            <dependency>
+                <groupId>velocity</groupId>
+                <artifactId>velocity</artifactId>
+                <version>1.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>1.3.2</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>2.5</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>hsqldb</groupId>
+                <artifactId>hsqldb</artifactId>
+                <version>1.8.0.7</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

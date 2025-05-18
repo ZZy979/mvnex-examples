@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.sonatype.mavenbook.multispring</groupId>
+        <artifactId>multi-module-spring</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <artifactId>simple-webapp-module-spring</artifactId>
+    <packaging>war</packaging>
+
+    <name>Simple Web Application Module</name>
+    <url>https://books.sonatype.com/mvnex-book/reference/multimodule-web-spring-sect-simple-web.html</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.sonatype.mavenbook.multispring</groupId>
+            <artifactId>simple-weather-module-spring</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.sonatype.mavenbook.multispring</groupId>
+            <artifactId>simple-persist-module</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>velocity</groupId>
+            <artifactId>velocity</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>simple-webapp</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>10.0.0</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>hsqldb</groupId>
+                        <artifactId>hsqldb</artifactId>
+                        <version>1.8.0.7</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>hibernate3-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <components>
+                        <component>
+                            <name>hbm2ddl</name>
+                            <implementation>annotationconfiguration</implementation>
+                        </component>
+                    </components>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>hsqldb</groupId>
+                        <artifactId>hsqldb</artifactId>
+                        <version>1.8.0.7</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+</project>
